@@ -3,6 +3,7 @@
 # Wollok interpreter script
 #
 #
+set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
@@ -26,5 +27,7 @@ DIR=`dirname "$PRG"`
 #java -cp "$(echo $WCLASS_PATH | sed 's# #:#g')" org.uqbar.project.wollok.launch.WollokLauncher $@
 echo "Running..."
 echo `find jars/ -name "*.jar"`
-java -cp "$(echo `find jars/ -name "*.jar"` | sed 's# #:#g')" org.uqbar.project.wollok.launch.WollokLauncher $@
-exit $?
+java -cp "$(echo `find jars/ -name "*.jar"` | sed 's# #:#g')" org.uqbar.project.wollok.launch.WollokLauncher $@ > result
+if [ -s result ] ; then
+  exit 1
+fi
