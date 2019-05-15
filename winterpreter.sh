@@ -28,10 +28,9 @@ DIR=`dirname "$PRG"`
 echo "Running..."
 echo `find jars/ -name "*.jar"`
 java -cp "$(echo `find jars/ -name "*.jar"` | sed 's# #:#g')" org.uqbar.project.wollok.launch.WollokLauncher $@ > result
-echo "*****************************"
-more result
-echo "*****************************"
-grep -q "ERROR" result
-if [ $? -eq 0 ]  ; then
-  exit 1
+if [ -s result ] ; then 
+  grep -q "ERROR" result
+  if [ $? -eq 0 ]  ; then
+    exit 1
+  fi
 fi
