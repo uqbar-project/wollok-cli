@@ -1,3 +1,9 @@
 SRC=.
 
-echo $(for i in `find $SRC -name "*.wtest"`; do ./winterpreter.sh $i; done) 
+for i in `find $SRC -name "*.wtest"`
+    do
+        echo $i
+        if ./winterpreter.sh $i ; then
+            exit 1
+        fi
+    done
