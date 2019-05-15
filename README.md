@@ -1,3 +1,5 @@
+![](images/wollokCI.png)
+
 # Wollok Continuous Integration Project
 
 [![Build Status](https://travis-ci.org/uqbar-project/wollok-ci.svg?branch=master)](https://travis-ci.org/uqbar-project/wollok-ci)
