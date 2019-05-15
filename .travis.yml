@@ -1,0 +1,8 @@
+language: generic
+
+sudo: required
+
+script:
+    - chmod 777 ./sanityCheck.sh
+    - ./sanityCheck.sh
+    

@@ -1,0 +1,1 @@
+./winterpreter.sh pepita.wtest
