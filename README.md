@@ -24,5 +24,6 @@ There is also a `jars` folder, where we put all necessary Java jar files in orde
 
 ## Future steps
 
+- [ ]: Tests all kind of situations ==> https://github.com/wollok/introPepita (not compiling - missing imports or bad parsing, compiling with validation errors like if (2 == 3) return false else true, tests failing with assertion errors, test failing with runtime errors (like division by zero or null parameters in operations like +), passing tests)
 - [ ]: Enhance scripts (avoid duplicated code)
 - [ ]: Migrate to Wollok Server Architecture in Amazon?
