@@ -30,7 +30,7 @@ if [ -s result ] ; then
     echo "ERROR en el archivo $1. Por favor verifique que funcione correctamente."
     echo
     echo "Resumen de errores"
-    echo $(more result)
+    echo $(cat result)
     exit 1
   fi
 fi
