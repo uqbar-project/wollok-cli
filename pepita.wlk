@@ -1,6 +1,7 @@
 object pepita {
 	var energia = 100
-	
+	const x
+
 	method energia() { return energia }
 	
 	method esFuerte() { return energia > 50 }
