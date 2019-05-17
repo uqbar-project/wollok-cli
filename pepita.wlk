@@ -1,11 +1,12 @@
 object pepita {
 	var energia = 100
 
-    method 
-
 	method energia() { return energia }
 	
-	method esFuerte() { return energia > 50 }
+	method esFuerte() { 
+        if (2 == 3) return false else true
+        //return energia > 50
+    }
 
 	method volar(kms) {
 		energia = energia - (kms + 10)

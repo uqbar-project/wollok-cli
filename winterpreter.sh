@@ -28,6 +28,9 @@ if [ -s result ] ; then
   grep -q "ERROR\|Exception" result
   if [ $? -eq 0 ]  ; then
     echo "ERROR en el archivo $1. Por favor verifique que funcione correctamente."
+    echo
+    echo "Resumen de errores"
+    echo $(more result)
     exit 1
   fi
 fi
