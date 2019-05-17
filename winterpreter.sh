@@ -31,7 +31,7 @@ if [ -s result ] ; then
     echo "ERROR en el archivo $1. Por favor verifique que funcione correctamente."
     echo
     echo "Resumen de errores"
-    echo $(cat result)
+    cat result
     exit 1
   fi
 fi
