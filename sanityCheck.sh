@@ -1,2 +1,2 @@
-./winterpreter.sh pepita.wtest
+./runTests.sh
 exit $?

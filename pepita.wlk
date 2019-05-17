@@ -1,6 +1,7 @@
 object pepita {
 	var energia = 100
-	const x
+
+    method 
 
 	method energia() { return energia }
 	
