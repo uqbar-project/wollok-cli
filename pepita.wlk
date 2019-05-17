@@ -4,8 +4,7 @@ object pepita {
 	method energia() { return energia }
 	
 	method esFuerte() { 
-        if (2 == 3) return false else true
-        //return energia > 50
+        return energia > 50
     }
 
 	method volar(kms) {
