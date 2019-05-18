@@ -3,7 +3,7 @@ object pepita {
 	
 	method energia() { return energia }
 	
-	method esFuerte() { 
+	method esFuerte() {
         return energia > 50
     }
 

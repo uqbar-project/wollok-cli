@@ -1,11 +1,11 @@
-//import pepita.*
+import pepita.*
 
 test "pepita comienza con 100 unidades de energía" {
-    var chelo = 2
 	assert.equals(100, pepita.energia())
 }
 
 test "pepita comienza siendo fuerte" {
+	var a = 2 + null
 	assert.that(pepita.esFuerte())
 }
 

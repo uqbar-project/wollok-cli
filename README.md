@@ -31,6 +31,8 @@ Both scripts first **build all .wlk files**, so even if your tests are passing o
 
 Otherwise, your build will fail.
 
+It then will run either all the tests files or all the programs. Any error prevents a succesful build to happen.
+
 ### Example 1: running tests in a Wollok Project
 
 If your Wollok project has several test files, your `.travis.yml` should look like this:
@@ -63,7 +65,7 @@ script:
     - ./runPrograms.sh
 ```
 
-## Tests
+## Testing Wollok CI
 
 Having https://github.com/wollok/introPepita as a witness case, we have tested all these possibilities:
 
@@ -71,7 +73,7 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 - [x] missing import `pepita.*` in test file => build failed
 - [x] validation errors in `pepita.wlk` like `if (2 == 3) return false else true` => build failed
 - [x] tests failing with assertion errors => build failed
-- [ ] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`) => build failed
+- [x] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`) => build failed
 - [ ] passing tests => build passed
 - [ ] warning issues in `pepita.wlk` (but no errors) => build passed
 
