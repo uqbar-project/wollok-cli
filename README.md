@@ -2,7 +2,7 @@
 
 # Wollok Command-Line Interface Project
 
-[![Build Status](https://travis-ci.org/uqbar-project/wollok-ci.svg?branch=master)](https://travis-ci.org/uqbar-project/wollok-ci)
+[![Build Status](https://travis-ci.org/uqbar-project/wollok-cli.svg?branch=master)](https://travis-ci.org/uqbar-project/wollok-cli)
 
 The main purpose of this project is to provide a command line interface (CLI) for Wollok developers & users, in order to foster any kind of automation (like CI workflow or developing bash scripts).
 
@@ -83,4 +83,6 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 
 ___
 
-![](images/uqbarLogo.jpg) -  _Powered by Uqbar_ - www.uqbar.org
+<div style="width: 100%; text-align: center;">
+    <image src="./images/uqbarLogo.png" height="3%" width="3%"/> - <i>Powered by Uqbar</i> - http://www.uqbar.org
+</div>
