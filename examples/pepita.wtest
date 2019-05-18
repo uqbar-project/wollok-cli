@@ -1,7 +1,7 @@
 import pepita.*
 
 test "pepita comienza con 100 unidades de energía" {
-	assert.equals(10, pepita.energia())
+	assert.equals(100, pepita.energia())
 }
 
 test "pepita comienza siendo fuerte" {
