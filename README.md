@@ -1,10 +1,10 @@
-<image src="./images/wollokCLI.png" height="20%" width="20%"/>
+<image src="./images/wollokCLILogo.png" height="20%" width="20%"/>
 
 # Wollok Command-Line Interface Project
 
 [![Build Status](https://travis-ci.org/uqbar-project/wollok-ci.svg?branch=master)](https://travis-ci.org/uqbar-project/wollok-ci)
 
-The main purpose of this project is to allow Wollok developers to have a simple CI workflow.
+The main purpose of this project is to provide a command line interface (CLI) for Wollok developers & users, in order to foster any kind of automation (like CI workflow or developing bash scripts).
 
 ## Structure
 
@@ -18,7 +18,7 @@ The root folder provides all Wollok executable files in bash:
 
 There is also a `jars` folder, where we put all necessary Java jar files in order to run in a standalone computer without installing the whole Wollok development environment.
 
-## Travis scripts
+## Travis integration & scripts
 
 You have these scripts you can use for Travis files
 
@@ -43,8 +43,8 @@ language: generic
 sudo: required
 
 script:
-    - git clone https://github.com/uqbar-project/wollok-ci
-    - mv wollok-ci/* ./
+    - git clone https://github.com/uqbar-project/wollok-cli
+    - mv wollok-cli/* ./
     - chmod 777 ./runTests.sh
     - ./runTests.sh
 ```
@@ -59,13 +59,13 @@ language: generic
 sudo: required
 
 script:
-    - git clone https://github.com/uqbar-project/wollok-ci
-    - mv wollok-ci/* ./
+    - git clone https://github.com/uqbar-project/wollok-cli
+    - mv wollok-cli/* ./
     - chmod 777 ./runTests.sh
     - ./runPrograms.sh
 ```
 
-## Testing Wollok CI
+## Testing Wollok CLI
 
 Having https://github.com/wollok/introPepita as a witness case, we have tested all these possibilities:
 
