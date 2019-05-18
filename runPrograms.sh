@@ -2,6 +2,8 @@ set -e
 
 . ./includes/commons.sh
 
+rm ./examples/*
+
 echo "Compilando archivos Wollok..."
 interpret "*.wlk"
 if [ $? -gt 0 ] ; then
