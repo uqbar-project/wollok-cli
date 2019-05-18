@@ -25,9 +25,11 @@ You have these scripts you can use for Travis files
 - **runTests.sh**
 - **runPrograms.sh**
 
-Both scripts first **build all .wlk files**, so even if your tests are passing, ensure you have no errors in `Problems` tab (in your Wollok IDE).
+Both scripts first **build all .wlk files**, so even if your tests are passing or your program is working fine, ensure you have no errors in `Problems` tab (in your Wollok IDE).
 
 ![](./images/wollokProblems.png)
+
+Otherwise, your build will fail.
 
 ### Example 1: running tests in a Wollok Project
 
@@ -61,23 +63,17 @@ script:
     - ./runPrograms.sh
 ```
 
-## Update Wollok versions
-
-## How it works
-
-- Building wlk files (even if there are no tests)
-- Running tests or programs
-
 ## Tests
 
-Having https://github.com/wollok/introPepita as a witness case,
+Having https://github.com/wollok/introPepita as a witness case, we have tested all these possibilities:
 
-- [x] not compiling
-- [x] missing imports
-- [ ] compiling with validation errors like `if (2 == 3) return false else true`
-- [x] tests failing with assertion errors
-- [ ] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`)
-- [ ] passing tests
+- [x] `pepita.wlk` not compiling => build failed
+- [x] missing import `pepita.*` in test file => build failed
+- [x] validation errors in `pepita.wlk` like `if (2 == 3) return false else true` => build failed
+- [x] tests failing with assertion errors => build failed
+- [ ] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`) => build failed
+- [ ] passing tests => build passed
+- [ ] warning issues in `pepita.wlk` (but no errors) => build passed
 
 ## Future steps
 
