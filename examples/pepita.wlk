@@ -1,10 +1,13 @@
 object pepita {
 	var energia = 100
 	
+	constructor() {
+		energia = 10
+	}
+
 	method energia() { return energia }
 	
 	method esFuerte() {
-		if (2 == 3) return false else true
         return energia > 50
     }
 

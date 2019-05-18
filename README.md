@@ -71,7 +71,7 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 
 - [x] `pepita.wlk` not compiling => build failed
 - [x] missing import `pepita.*` in test file => build failed
-- [x] validation errors in `pepita.wlk` like `if (2 == 3) return false else true` => build failed
+- [x] validator errors in `pepita.wlk` like having a constructor in an object definition => build failed
 - [x] tests failing with assertion errors => build failed
 - [x] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`) => build failed
 - [ ] passing tests => build passed
