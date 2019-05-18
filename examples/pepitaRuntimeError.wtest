@@ -1,0 +1,39 @@
+import pepitaRuntimeError.*
+
+test "pepita comienza con 100 unidades de energía" {
+	assert.equals(100, pepita.energia())
+}
+
+test "pepita comienza siendo fuerte" {
+	assert.that(pepita.esFuerte())
+}
+
+test "pepita vuela 5 kilómetros y queda con 85 de energía" {
+	pepita.volar(5)
+	assert.equals(85, pepita.energia())
+}
+
+test "pepita come 120 gramos y su energía es 580" {
+	pepita.comer(120)
+	assert.equals(580, pepita.energia())
+}
+
+test "pepita empieza a volar, no vuela y la energía baja a 90" {
+	pepita.volar(0)
+	assert.equals(90, pepita.energia())
+}
+
+test "pepita come 0 gramos y la energía se mantiene en 100" {
+	pepita.comer(0)
+	assert.equals(100, pepita.energia())
+}
+
+test "pepita vuela 60 kilómetros, y ya no es fuerte" {
+	pepita.volar(60)
+	assert.notThat(pepita.esFuerte())
+}
+
+test "pepita vuela 40 kilómetros, y ya no es fuerte" {
+	pepita.volar(40)
+	assert.notThat(pepita.esFuerte())
+}

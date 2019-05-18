@@ -67,9 +67,9 @@ script:
     - ./runPrograms.sh
 ```
 
-## Testing Wollok CLI
+## Testing Wollok CLI: Sanity check
 
-Having https://github.com/wollok/introPepita as a witness case, we have tested all these possibilities:
+Having https://github.com/wollok/introPepita as a witness case, these are the test cases:
 
 - [x] `pepita.wlk` not compiling => build failed
 - [x] missing import `pepita.*` in test file => build failed

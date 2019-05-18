@@ -1,0 +1,7 @@
+test "pepita comienza con 100 unidades de energía" {
+	assert.equals(100, pepita.energia())
+}
+
+test "pepita comienza siendo fuerte" {
+	assert.that(pepita.esFuerte())
+}
