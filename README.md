@@ -83,4 +83,4 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 
 ___
 
-![](images/uqbar.jpg) -  _Powered by Uqbar_ - www.uqbar.org
+![](images/uqbarLogo.jpg) -  _Powered by Uqbar_ - www.uqbar.org
