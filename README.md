@@ -83,6 +83,6 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 
 ___
 
-<div style="width: 100%; text-align: center;">
+<div style="width: 100%; text-align: center; margin: auto;">
     <image src="./images/uqbarLogo.png" height="3%" width="3%"/> - <i>Powered by Uqbar</i> - http://www.uqbar.org
 </div>
