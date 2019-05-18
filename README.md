@@ -75,7 +75,7 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 - [x] tests failing with assertion errors => build failed
 - [x] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`) => build failed
 - [ ] passing tests => build passed
-- [ ] warning issues in `pepita.wlk` (but no errors) => build passed
+- [x] warning issues in `pepita.wlk` (but no errors) => build passed
 
 ## Future steps
 
