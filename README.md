@@ -1,5 +1,7 @@
 <image src="./images/wollokCLILogo.png" height="20%" width="20%"/>
 
+<!-- http://patorjk.com/software/taag/#p=display&f=Larry%203D&t=cli -->
+
 # Wollok Command-Line Interface Project
 
 [![Build Status](https://travis-ci.org/uqbar-project/wollok-cli.svg?branch=master)](https://travis-ci.org/uqbar-project/wollok-cli)
