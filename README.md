@@ -1,6 +1,6 @@
-![](images/wollokCI.png)
+<image src="./images/wollokCLI.png" height="20%" width="20%"/>
 
-# Wollok Continuous Integration Project
+# Wollok Command-Line Interface Project
 
 [![Build Status](https://travis-ci.org/uqbar-project/wollok-ci.svg?branch=master)](https://travis-ci.org/uqbar-project/wollok-ci)
 
@@ -80,3 +80,7 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 ## Future steps
 
 - Migrate to Wollok Server Architecture in Amazon?
+
+___
+
+![](images/uqbar.jpg) -  _Powered by Uqbar_ - www.uqbar.org
