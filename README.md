@@ -27,7 +27,7 @@ You have these scripts you can use for Travis files
 
 Both scripts first **build all .wlk files**, so even if your tests are passing or your program is working fine, ensure you have no errors in `Problems` tab (in your Wollok IDE).
 
-![](./images/wollokProblems.png)
+![image](images/wollokProblems.png)
 
 Otherwise, your build will fail.
 
@@ -74,9 +74,9 @@ Having https://github.com/wollok/introPepita as a witness case, we have tested a
 - [x] validator errors in `pepita.wlk` like having a constructor in an object definition => build failed
 - [x] tests failing with assertion errors => build failed
 - [x] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`) => build failed
-- [ ] passing tests => build passed
+- [x] passing tests => build passed
 - [x] warning issues in `pepita.wlk` (but no errors) => build passed
 
 ## Future steps
 
-- [ ]: Migrate to Wollok Server Architecture in Amazon?
+- Migrate to Wollok Server Architecture in Amazon?
