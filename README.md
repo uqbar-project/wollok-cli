@@ -18,9 +18,19 @@ The root folder provides all Wollok executable files in bash:
 
 There is also a `jars` folder, where we put all necessary Java jar files in order to run in a standalone computer without installing the whole Wollok development environment.
 
+## Travis scripts
+
+You have these scripts you can use for Travis files
+
+- **runTests.sh**
+- **runPrograms.sh**
+
 ## Update Wollok versions
 
 ## How it works
+
+- Building wlk files (even if there are no tests)
+- Running tests or programs
 
 ## Future steps
 

@@ -3,6 +3,6 @@ language: generic
 sudo: required
 
 script:
-    - chmod 777 ./sanityCheck.sh
+    - chmod 777 ./sanityCheck.sh ./runTests.sh ./runPrograms.sh
     - ./sanityCheck.sh
     

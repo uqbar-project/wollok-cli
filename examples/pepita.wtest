@@ -1,7 +1,6 @@
 import pepita.*
 
 test "pepita comienza con 100 unidades de energía" {
-    var chelo = 2
 	assert.equals(10, pepita.energia())
 }
 
