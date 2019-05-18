@@ -1,6 +1,2 @@
-./runTests.sh
-if [ $? -gt 0 ] ; then
-    exit 1
-fi
-./runPrograms.sh
+./runTests.sh && ./runPrograms.sh
 exit $?
