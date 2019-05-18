@@ -5,7 +5,6 @@ test "pepita comienza con 100 unidades de energía" {
 }
 
 test "pepita comienza siendo fuerte" {
-	var a = 2 + null
 	assert.that(pepita.esFuerte())
 }
 
