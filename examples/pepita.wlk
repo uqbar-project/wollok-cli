@@ -4,7 +4,6 @@ object pepita {
 	method energia() { return energia }
 	
 	method esFuerte() {
-		var a = 0
         return energia > 50
     }
 
