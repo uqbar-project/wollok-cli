@@ -4,7 +4,7 @@ program pepitaFuerte {
 	console.println("En la situación inicial")
 	console.println("¿Pepita es fuerte?")
 	console.println(pepita.esFuerte())
-	val a = 2 + null
+	var a = 2 + null
 	pepita.volar(60)
 	console.println("Luego de volar 60 kilómetros")
 	console.println("¿Pepita es fuerte?")
