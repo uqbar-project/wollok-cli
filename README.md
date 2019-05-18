@@ -72,12 +72,12 @@ script:
 
 Having https://github.com/wollok/introPepita as a witness case,
 
-- [ ]: not compiling 
-- [ ]: missing imports or bad parsing
-- [ ]: compiling with validation errors like `if (2 == 3) return false else true`
-- [x]: tests failing with assertion errors
-- [ ]: test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`)
-- [ ]: passing tests
+- [x] not compiling
+- [x] missing imports
+- [ ] compiling with validation errors like `if (2 == 3) return false else true`
+- [x] tests failing with assertion errors
+- [ ] test failing with runtime errors (like `division by zero` or `null` parameters in operations like `+`)
+- [ ] passing tests
 
 ## Future steps
 

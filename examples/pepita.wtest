@@ -1,4 +1,4 @@
-import pepita.*
+//import pepita.*
 
 test "pepita comienza con 100 unidades de energía" {
     var chelo = 2
