@@ -79,7 +79,32 @@ Having https://github.com/wollok/introPepita as a witness case, these are the te
 - [x] passing tests => build passed
 - [x] warning issues in `pepita.wlk` (but no errors) => build passed
 
-## Wollok 
+## Updating to a new version of Wollok
+
+Whenever Wollok has a new stable release, you can update all jars from `jars` folder running `generateCI.sh` script. You must provide just one argument, the location of root Wollok development environment folder.
+
+For example, if you have this folder structure:
+
+```bash
+  |- wollok-cli
+  |   ...
+  |- wollok-dev
+     |- wollok
+        |- wollok development environment files ...
+  |-
+```
+
+This is the way you should call the script:
+
+```bash
+ ./generateCI.sh ../wollok-dev/wollok
+```
+
+Don't add the trailing `/` character for wollok root folder. After running the script, you can tests if everything went smooth:
+
+```bash
+./sanityCheck.sh
+```
 
 ## Another useful scripts
 
