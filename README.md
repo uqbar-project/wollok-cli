@@ -87,6 +87,7 @@ For example, if you have this folder structure:
 
 ```
   |- wollok-cli
+     |- generate-CI script bash file
   |   ...
   |- wollok-dev
      |- wollok
