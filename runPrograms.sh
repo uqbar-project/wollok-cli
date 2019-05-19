@@ -1,3 +1,9 @@
+#!/bin/bash
+#
+# Runs all programs in a project
+# Author: Dodain
+#
+
 set -e 
 
 . ./includes/commons.sh

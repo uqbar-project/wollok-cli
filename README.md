@@ -79,6 +79,14 @@ Having https://github.com/wollok/introPepita as a witness case, these are the te
 - [x] passing tests => build passed
 - [x] warning issues in `pepita.wlk` (but no errors) => build passed
 
+## Wollok 
+
+## Another useful scripts
+
+They are all in `util` folder:
+
+- **cloneAllProjects.sh**: clones all projects from Wollok organization
+
 ## Future steps
 
 - Migrate to Wollok Server Architecture in Amazon?
