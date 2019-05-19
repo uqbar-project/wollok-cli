@@ -85,7 +85,7 @@ Whenever Wollok has a new stable release, you can update all jars from `jars` fo
 
 For example, if you have this folder structure:
 
-```bash
+```
   |- wollok-cli
   |   ...
   |- wollok-dev
