@@ -1,4 +1,4 @@
-<image src="./images/wollokCLILogo.png" height="20%" width="20%"/>
+<image src="./images/wollokCLILogo2.png" height="20%" width="20%"/>
 
 <!-- http://patorjk.com/software/taag/#p=display&f=Larry%203D&t=cli -->
 
