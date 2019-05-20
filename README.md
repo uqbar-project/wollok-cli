@@ -113,6 +113,13 @@ They are all in `util` folder:
 
 - **cloneAllProjects.sh**: clones all projects from Wollok organization
 
+## Adding Travis to whole repository
+
+If you want to add `.travis.yml` to all projects in a single organization (for example, `wollok`), you can use this scripts in `util` folder:
+
+- **cloneAllProjects.sh**: for cloning all repos in a single organization
+- **addTravisInAllProjects.sh**: searches for `.travis.yml` files in each project and adds the corresponding (tests or programs), and also adds Travis badge to README.md (creating or appending to an existing README file)
+
 ## Future steps
 
 - Migrate to Wollok Server Architecture in Amazon?
