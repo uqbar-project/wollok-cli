@@ -18,6 +18,8 @@ The root folder provides all Wollok executable files in bash:
 - **wrepl.sh**: interactive console is also available
 - and server scripts
 
+![](images/wollokConsole.gif)
+
 There is also a `jars` folder, where we put all necessary Java jar files in order to run in a standalone computer without installing the whole Wollok development environment.
 
 ## Travis integration & scripts
@@ -119,6 +121,7 @@ If you want to add `.travis.yml` to all projects in a single organization (for e
 
 - **cloneAllProjects.sh**: for cloning all repos in a single organization
 - **addTravisInAllProjects.sh**: searches for `.travis.yml` files in each project and adds the corresponding (tests or programs), and also adds Travis badge to README.md (creating or appending to an existing README file)
+- **pushingAllTravis.sh**: pushes all changes into Github repositories again
 
 ## Future steps
 
