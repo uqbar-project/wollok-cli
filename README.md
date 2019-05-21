@@ -20,7 +20,7 @@ The root folder provides all Wollok executable files in bash:
 
 Here's an example of running 
 
-- all tests with `winterpreter.sh` script (since no output was given all the tests passed succesfully),
+- a file with tests with the interpreter script (since no output was given all tests passed succesfully),
 - AST analyzer and saving output into a file
 - running interactive console with **pepita**, our main character for the very first example in Wollok 
 
