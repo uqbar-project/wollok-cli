@@ -14,9 +14,15 @@ The root folder provides all Wollok executable files in bash:
 
 - **wast.sh**: AST Analyzer
 - **wchecker.sh**: Wollok validations checker
-- **winterpreter.sh**: Wollok Interpreter, it will run tests & programs
+- **winterpreter.sh**: Wollok Interpreter, it will run tests & programs.
 - **wrepl.sh**: interactive console is also available
 - and server scripts
+
+Here's an example of running 
+
+- all tests with `winterpreter.sh` script (since no output was given all the tests passed succesfully),
+- AST analyzer and saving output into a file
+- running interactive console with **pepita**, our main character for the very first example in Wollok 
 
 ![](images/wollokConsole.gif)
 
