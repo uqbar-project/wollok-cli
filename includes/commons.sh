@@ -1,8 +1,8 @@
 function interpret() {
-    for i in `find $SRC -name $1 -not -path "./.history*"`
+    for i in `find $SRC -name $1 ! -path "./.history*" ! -path "./bin/**"`
         do
             echo "   ==>  $i"
-            ./winterpreter.sh $i
+            $CLI_DIR/winterpreter.sh $i
             if [ $? -gt 0 ] ; then
                 return 1
             fi

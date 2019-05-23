@@ -3,11 +3,11 @@
 # Wollok interpreter script
 #
 #
-#set -e
 
-. ./includes/prepareFile.sh
+CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $CLI_DIR/includes/prepareFile.sh
 
-java -cp "$(echo `find jars/ -name "*.jar"` | sed 's# #:#g')" org.uqbar.project.wollok.launch.WollokLauncher $@ > result
+java -cp "$(echo `find $CLI_DIR/jars/ -name "*.jar"` | sed 's# #:#g')" org.uqbar.project.wollok.launch.WollokLauncher $@ > result
 chmod 666 result
 if [ -s result ] ; then 
   grep -q "ERROR\|Exception" result

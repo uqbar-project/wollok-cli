@@ -3,12 +3,12 @@
 # Runs all programs in a project
 # Author: Dodain
 #
-
 set -e 
 
-. ./includes/commons.sh
+CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $CLI_DIR/includes/commons.sh
 
-rm ./examples/*
+rm -f ./examples/*
 
 echo "Compilando archivos Wollok..."
 interpret "*.wlk"
