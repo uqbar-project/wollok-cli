@@ -71,7 +71,7 @@ sudo: required
 script:
     - git clone https://github.com/uqbar-project/wollok-cli
     - mv wollok-cli/* ./
-    - chmod 777 ./runTests.sh
+    - chmod 777 ./runPrograms.sh
     - ./runPrograms.sh
 ```
 
