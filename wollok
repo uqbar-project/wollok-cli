@@ -1,0 +1,28 @@
+#!/bin/bash
+
+COMMAND=$1
+CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+case $COMMAND in
+  test)
+    SCRIPT="runTests.sh"
+    ;;
+  repl)
+    SCRIPT="wrepl.sh"
+    ;;
+  run)
+    SCRIPT="runPrograms.sh"
+    ;;
+  check)
+    SCRIPT="wchecker.sh"
+    ;;
+  ast)
+    SCRIPT="wast.sh"
+    ;;
+  *)
+    echo "El comando $COMMAND no existe."
+    exit 1
+    ;;
+esac
+
+source $CLI_DIR/$SCRIPT ${@:2}
