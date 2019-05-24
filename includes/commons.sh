@@ -1,6 +1,12 @@
+#
+# Common functions
+#
+# Interprets
+#    arg 1: a Wollok file (.wtest, .wlk, .wpgm)
+#    arg 2: passing wollok-cli root folder
 function interpret() {
     CLI_FOLDER=$2
-    echo `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "$CLI_FOLDER/examples/*"`
+    echo "wollok-cli folder is $CLI_FOLDER $2"
     for i in `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "$CLI_FOLDER/examples/*"`
         do
             echo "   ==>  $i"

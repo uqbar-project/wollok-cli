@@ -3,7 +3,6 @@
 # Runs all tests in a project
 # Author: Dodain
 #
-
 set -e 
 
 # Setting relative folder to this script file
