@@ -1,6 +1,5 @@
 function interpret() {
-    rm -f $CLI_DIR/examples/*
-    for i in `find $SRC -name $1 ! -path "./.history*" ! -path "./bin/**"`
+    for i in `find $SRC -name $1 ! -path "./.history*" ! -path "./bin/**" ! -path "$CLI_DIR/examples/*"`
         do
             echo "   ==>  $i"
             $CLI_DIR/winterpreter.sh $i

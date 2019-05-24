@@ -121,10 +121,16 @@ This is the way you should call the script:
 generateCI.sh ../wollok-dev/wollok
 ```
 
+Or, if you are in `wollok-dev/wollok` folder, simply run
+
+```bash
+generateCI.sh .
+```
+
 Don't add the trailing `/` character for wollok root folder. After running the script, you can tests if everything went smooth:
 
 ```bash
-sanityCheck.sh
+wsanity-check.sh
 ```
 
 ## Another useful scripts

@@ -15,19 +15,21 @@ if [ -z $1 ]
     echo -e "https://github.com/uqbar-project/wollok/wiki/Development---Environment-Setup"
     echo -e "and make sure you run 'mvn clean install' first."
     echo -e "Example: if you have a sibling folder wollok-dev and inside you have a wollok directory, call it"
-    echo -e "$ ./generateCI.sh ../wollok-dev/wollok"
+    echo -e "$ generateCI.sh ../wollok-dev/wollok"
     echo -e "(without the trailing /)"
     exit 1
 fi
 
-JARS_FOLDER=./jars/
-
+# Folders initialization
+CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+JARS_FOLDER=$CLI_DIR/jars/
 mkdir -p $JARS_FOLDER
 
 LAUNCH_FOLDER="$1/org.uqbar.project.wollok.launch"
-LIB="./$LAUNCH_FOLDER/lib"
-SRC="./$LAUNCH_FOLDER/target"
+LIB="$LAUNCH_FOLDER/lib"
+SRC="$LAUNCH_FOLDER/target"
 
+# List of .jar dependencies
 JARS=(
  "com.google.inject"
  "com.google.guava"
@@ -58,17 +60,17 @@ JARS=(
  "org.uqbar.project.wollok.launch"
 )
 
-#WCLASS_PATH="echo $(for i in `find $SRC -name "*.jar"`; do echo $i; done) $(for i in `find $DIR/$LIB -name "*.jar"`; do echo $i; done)"
+# Copying all .jars into wollok-cli jars folder
+# Step 1 => from target folder
 for i in "${JARS[@]}"
 do
   echo "Copying $i*.jar" 
-  #find $SRC -name "$i*.jar" | xargs cp -t jars/
   find $SRC -name "$i*.jar" | xargs cp -t $JARS_FOLDER
 done
 
+# Step 2 => from lib folder
 for i in `find $LIB -type f -name "*.jar"`
 do
   echo "Copying $i"
-  #cp $i jars/
   cp $i $JARS_FOLDER
 done

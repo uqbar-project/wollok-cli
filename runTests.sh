@@ -6,7 +6,7 @@
 
 set -e 
 
-CURR_DIR=./
+# Setting relative folder to this script file
 CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $CLI_DIR/includes/commons.sh
 
@@ -15,7 +15,7 @@ interpret "*.wlk"
 if [ $? -gt 0 ] ; then
     exit 1
 fi
-echo "********************************************"
+echo "==========================================================="
 echo "Ejecutando tests..."
 interpret "*.wtest"
 if [ $? -gt 0 ] ; then
