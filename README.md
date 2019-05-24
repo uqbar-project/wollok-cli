@@ -17,7 +17,7 @@ If you want to use it in your computer,
 - and add that local folder to your PATH environment variable (and into your bash profile)
 
 ```bash
-export PATH="$PATH:<<localPath>>"
+export PATH="$PATH:<<pathWhereThisRepoWasCloned>>"
 ```
 
 Then you can move to any other folder and use all executable bash files, as explained below.
