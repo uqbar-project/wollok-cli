@@ -1,4 +1,5 @@
 function interpret() {
+    rm -f $CLI_DIR/examples/*
     for i in `find $SRC -name $1 ! -path "./.history*" ! -path "./bin/**"`
         do
             echo "   ==>  $i"
