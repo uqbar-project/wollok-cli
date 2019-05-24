@@ -6,8 +6,6 @@
 #    arg 2: passing wollok-cli root folder
 function interpret() {
     CLI_FOLDER=$2
-    echo "wollok-cli folder is $CLI_FOLDER $2"
-    echo `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*"`
     for i in `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*"`
         do
             echo "   ==>  $i"
