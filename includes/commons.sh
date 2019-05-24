@@ -1,11 +1,10 @@
 function interpret() {
-    echo $CLI_DIR
-    echo $2
-    echo `find $SRC -name $1 ! -path "./.history*" ! -path "./bin/**" ! -path "$2/examples/*"`
-    for i in `find $SRC -name $1 ! -path "./.history*" ! -path "./bin/**" ! -path "$2/examples/*"`
+    CLI_FOLDER=$2
+    echo `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "$CLI_FOLDER/examples/*"`
+    for i in `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "$CLI_FOLDER/examples/*"`
         do
             echo "   ==>  $i"
-            $CLI_DIR/winterpreter.sh $i
+            $CLI_FOLDER/winterpreter.sh $i
             if [ $? -gt 0 ] ; then
                 return 1
             fi
