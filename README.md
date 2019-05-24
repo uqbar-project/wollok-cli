@@ -8,6 +8,20 @@
 
 The main purpose of this project is to provide a command line interface (CLI) for Wollok developers & users, in order to foster any kind of automation (like CI workflow or developing bash scripts). [Wollok](http://www.wollok.org/en/) is a pedagogical tool for teaching object-oriented programming, and it is IDE based. Although, you can also run checker, interpreter and interactive console without a graphical user interface.
 
+## Installation
+
+If you want to use it in your computer, 
+
+- you must have a Linux-like operating system
+- clone this repo into any local folder
+- and add that local folder to your PATH environment variable (and into your bash profile)
+
+```bash
+export PATH="$PATH:<<localPath>>"
+```
+
+Then you can move to any other folder and use all executable bash files, as explained below.
+
 ## Structure
 
 The root folder provides all Wollok executable files in bash:
@@ -54,9 +68,8 @@ sudo: required
 
 script:
     - git clone https://github.com/uqbar-project/wollok-cli
-    - mv wollok-cli/* ./
-    - chmod 777 ./runTests.sh
-    - ./runTests.sh
+    - export PATH="$PATH:./wollok-cli"
+    - runTests.sh
 ```
 
 ### Example 2: running a program inside a Wollok Project
@@ -70,9 +83,8 @@ sudo: required
 
 script:
     - git clone https://github.com/uqbar-project/wollok-cli
-    - mv wollok-cli/* ./
-    - chmod 777 ./runPrograms.sh
-    - ./runPrograms.sh
+    - export PATH="$PATH:./wollok-cli"
+    - runPrograms.sh
 ```
 
 ## Testing Wollok CLI: Sanity check
@@ -106,13 +118,13 @@ For example, if you have this folder structure:
 This is the way you should call the script:
 
 ```bash
- ./generateCI.sh ../wollok-dev/wollok
+generateCI.sh ../wollok-dev/wollok
 ```
 
 Don't add the trailing `/` character for wollok root folder. After running the script, you can tests if everything went smooth:
 
 ```bash
-./sanityCheck.sh
+sanityCheck.sh
 ```
 
 ## Another useful scripts
