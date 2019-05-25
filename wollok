@@ -9,6 +9,10 @@ case $COMMAND in
     ;;
   repl)
     SCRIPT="wrepl.sh"
+    # Allow REPL to run without any file
+    if [ -z $3 ] ; then
+      set -- "${@:1:2}" "$CLI_DIR/includes/emptyFile.wlk" "${@:4}"
+    fi
     ;;
   run)
     SCRIPT="runPrograms.sh"
@@ -20,7 +24,14 @@ case $COMMAND in
     SCRIPT="wast.sh"
     ;;
   *)
-    echo "El comando $COMMAND no existe."
+    echo "El comando 'wollok $COMMAND' no existe."
+    echo
+    echo "Esta es una lista de comandos que podés ejecutar con wollok"
+    echo "test             => ejecuta todos los archivos de tests en la carpeta actual"
+    echo "run              => ejecuta todos los archivos de programas en la carpeta actual"
+    echo "repl archivo.wlk => ejecuta la consola REPL (el archivo es opcional)"
+    echo "check archivo    => compila y valida un archivo con extensión Wollok válida"
+    echo "ast archivo      => devuelve un JSON el AST del archivo según la gramática de Wollok"
     exit 1
     ;;
 esac

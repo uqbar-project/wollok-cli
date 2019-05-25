@@ -22,40 +22,43 @@ export PATH="$PATH:<<pathWhereThisRepoWasCloned>>"
 
 Then you can move to any other folder and use all executable bash files, as explained below.
 
-## Structure
+## Scripts
 
-The root folder provides all Wollok executable files in bash:
+The root folder provides all Wollok bash commands:
 
-- **wast.sh**: AST Analyzer
-- **wchecker.sh**: Wollok validations checker
-- **winterpreter.sh**: Wollok Interpreter, it will run tests & programs.
-- **wrepl.sh**: interactive console is also available
-- and server scripts
+- **wollok test & wollok run**: runs all the test/programs from the current folder (see below)
+- **repl**: invoke Wollok interactive REPL console, using an optional .wlk file
+- **check**: builds and validates any wollok file
+- **ast**: outputs the current Abstract Syntax Tree, according to Wollok grammatical rules.
+- you'll also find Wollok server scripts.
 
 Here's an example of running 
 
-- a file with tests with the interpreter script (since no output was given all tests passed succesfully),
-- AST analyzer and saving output into a file
-- running interactive console with **pepita**, our main character for the very first example in Wollok 
+- all tests from a project,
+- all programs from a project,
+- running interactive console without any file,
+- running interactive console using **pepita**, our main character for the very first example in Wollok,
+- checker for **pepita.wlk**  (since no output was given all tests passed succesfully),
+- and AST analyzer for **pepita.wlk** and saving output into a file
 
-![](images/wollokConsole.gif)
+![](images/wollokCLIDemo.gif)
 
-There is also a `jars` folder, where we put all necessary Java jar files in order to run in a standalone computer without installing the whole Wollok development environment.
+### `jars` folder
+
+In `jars` folder we put all necessary Java jar files in order to run in a standalone computer without installing the whole Wollok development environment.
 
 ## Travis integration & scripts
 
-You have these scripts you can use for Travis files
+- **wollok test**
+- **wollok run**
 
-- **runTests.sh**
-- **runPrograms.sh**
-
-Both scripts first **build all .wlk files**, so even if your tests are passing or your program is working fine, ensure you have no errors in `Problems` tab (in your Wollok IDE).
+are suitable for using it in Travis scripts. They both start **building all .wlk files**, so even if your tests are passing or your program is working fine, ensure you have no errors in `Problems` tab (in your Wollok IDE).
 
 ![image](images/wollokProblems.png)
 
 Otherwise, your build will fail.
 
-It then will run either all the tests files or all the programs. Any error prevents a succesful build to happen.
+It then will run either all the tests files or all the programs. Any kind of error prevents a succesful build to happen.
 
 ### Example 1: running tests in a Wollok Project
 
@@ -69,7 +72,7 @@ sudo: required
 script:
     - git clone https://github.com/uqbar-project/wollok-cli
     - export PATH="$PATH:./wollok-cli"
-    - runTests.sh
+    - wollok test
 ```
 
 ### Example 2: running a program inside a Wollok Project
@@ -84,7 +87,20 @@ sudo: required
 script:
     - git clone https://github.com/uqbar-project/wollok-cli
     - export PATH="$PATH:./wollok-cli"
-    - runPrograms.sh
+    - wollok run
+```
+
+Or, if you have both programs and tests, you could simply do a
+
+```yml
+language: generic
+
+sudo: required
+
+script:
+    - git clone https://github.com/uqbar-project/wollok-cli
+    - export PATH="$PATH:./wollok-cli"
+    - wollok run && wollok test
 ```
 
 ## Testing Wollok CLI: Sanity check
@@ -107,7 +123,7 @@ For example, if you have this folder structure:
 
 ```
   |- wollok-cli
-     |- generate-CI script bash file
+     |- generateCI script bash file
   |   ...
   |- wollok-dev
      |- wollok
@@ -149,6 +165,7 @@ If you want to add `.travis.yml` to all projects in a single organization (for e
 
 ## Future steps
 
+- See the [current opened issues](https://github.com/uqbar-project/wollok-cli/issues)
 - Migrate to Wollok Server Architecture in Amazon?
 
 ___
