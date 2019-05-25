@@ -1,16 +1,17 @@
 #!/bin/bash
+set -e
 
 function addTravisFile() {
     shopt -s nullglob
     echo "Processing $1"
 
-    if [ -s ./$1/.travis.yml ]; then
-        echo "   Travis file already created. Bypassing."
-        return
-    fi
+    # if [ -s ./$1/.travis.yml ]; then
+    #     echo "   Travis file already created. Bypassing."
+    #     return
+    # fi
 
-    files=( *.wtest )
-    if (( ${#files[@]} )); then
+    find . -name "*.wtest" -type f | egrep '.*'
+    if [ $? -eq 0 ]; then
         echo "   Creating Travis file for tests"
         cp ./travisTests.yml ./$1/.travis.yml
     else
@@ -45,5 +46,5 @@ function addBadgeInReadme() {
 for i in `find . -mindepth 1 -maxdepth 1 -type d -not -path "./.history*" | sed "s/\.\///g"`
     do
         addTravisFile $i
-        addBadgeInReadme $i 
+        # addBadgeInReadme $i 
     done
