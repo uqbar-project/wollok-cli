@@ -8,6 +8,8 @@
 CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 SANITY_CHECK_DIR="wsanity-check-examples"
 
+source $CLI_DIR/includes/colors.sh
+
 function testFailingFile() {
     echo "=========================================================================================="
     echo "Testeando archivo $1"
@@ -15,11 +17,18 @@ function testFailingFile() {
         echo "Archivo $1 no existe"
         return 1
     fi
-    $CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/$1
-    if [ $? -ne 1 ] ; then
-        echo "$1 no debería haber compilado"
+    EXTRA_ARG=""
+    if [[ $1 == *.wtest ]] ; then
+        EXTRA_ARG="-t"
+    fi
+    $CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/$1 exitOnBuildFailure $EXTRA_ARG
+    if [ $? -eq 0 ] ; then
+        echo "$RED$BOLD""✗ ERROR en $1. $RESET$RED""No debería haber funcionado correctamente.$RESET"
         return 1
     fi
+
+    echo 
+    echo "$GREEN$BOLD""$1 √ (OK)$RESET"
     return 0
 }
 
@@ -35,7 +44,9 @@ fi
 
 echo "=========================================================================================="
 echo "Testing happy path for pepita test and program"
-$CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/pepita.warnings.wlk \
-    && $CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/pepita.wtest \
-    && $CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/pepita.wpgm
-exit $?
+$CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/pepita.warnings.wlk exitOnBuildFailure \
+    && $CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/pepita.wtest -t exitOnBuildFailure \
+    && $CLI_DIR/winterpreter.sh $CLI_DIR/$SANITY_CHECK_DIR/pepita.wpgm exitOnBuildFailure
+STATUS=$?
+echo "$GREEN$BOLD""HAPPY PATH √ (OK)$RESET"
+exit $STATUS

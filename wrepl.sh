@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Wollok interpreter script
+# Wollok REPL script
 #
 #
 

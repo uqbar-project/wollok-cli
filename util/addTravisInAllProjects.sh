@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 function addTravisFile() {
     shopt -s nullglob

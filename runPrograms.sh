@@ -3,7 +3,6 @@
 # Runs all programs in a project
 # Author: Dodain
 #
-set -e 
 
 # Setting relative folder to this script file
 CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
