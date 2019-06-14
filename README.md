@@ -10,7 +10,7 @@ The main purpose of this project is to provide a command line interface (CLI) fo
 
 ## Installation
 
-If you want to use it in your computer, 
+If you want to use it in your computer,
 
 - you must have a Linux-like operating system
 - clone this repo into any local folder
@@ -32,7 +32,7 @@ The root folder provides all Wollok bash commands:
 - **ast**: outputs the current Abstract Syntax Tree, according to Wollok grammatical rules.
 - you'll also find Wollok server scripts.
 
-Here's an example of running 
+Here's an example of running
 
 - all tests from a project,
 - all programs from a project,
