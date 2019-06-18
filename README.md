@@ -36,12 +36,17 @@ Here's an example of running
 
 - all tests from a project,
 - all programs from a project,
+
+![](images/wollokCLIDemo1.gif)
+
+And a second demo
+
 - running interactive console without any file,
 - running interactive console using **pepita**, our main character for the very first example in Wollok,
 - checker for **pepita.wlk**  (since no output was given all tests passed succesfully),
 - and AST analyzer for **pepita.wlk** and saving output into a file
 
-![](images/wollokCLIDemo.gif)
+![](images/wollokCLIDemo2.gif)
 
 ### `jars` folder
 
@@ -59,6 +64,10 @@ are suitable for using it in Travis scripts. They both start **building all .wlk
 Otherwise, your build will fail.
 
 It then will run either all the tests files or all the programs. Any kind of error prevents a succesful build to happen.
+
+An example of Travis output:
+
+![image](images/travisBuild.png)
 
 ### Example 1: running tests in a Wollok Project
 
