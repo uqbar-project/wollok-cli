@@ -23,6 +23,9 @@ case $COMMAND in
   ast)
     SCRIPT="wast.sh"
     ;;
+  format)
+    SCRIPT="wformat.sh"
+    ;;
   *)
     echo "El comando 'wollok $COMMAND' no existe."
     echo
@@ -30,6 +33,7 @@ case $COMMAND in
     echo "test             => ejecuta todos los archivos de tests en la carpeta actual"
     echo "run              => ejecuta todos los archivos de programas en la carpeta actual"
     echo "repl archivo.wlk => ejecuta la consola REPL (el archivo es opcional)"
+    echo "format aves.wlk  => aplica el formateador al archivo aves.wlk (-save actualiza el archivo)"
     echo "check archivo    => compila y valida un archivo con extensión Wollok válida"
     echo "ast archivo      => devuelve un JSON el AST del archivo según la gramática de Wollok"
     exit 1
