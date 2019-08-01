@@ -28,6 +28,7 @@ mkdir -p $JARS_FOLDER
 LAUNCH_FOLDER="$1/org.uqbar.project.wollok.launch"
 LIB="$LAUNCH_FOLDER/lib"
 SRC="$LAUNCH_FOLDER/target"
+LIB_GAME="$1/org.uqbar.project.wollok.game/lib"
 
 # List of .jar dependencies
 JARS=(
@@ -58,7 +59,7 @@ JARS=(
  "org.uqbar.project.wollok-"
  "org.uqbar.project.wollok.lib"
  "org.uqbar.project.wollok.launch"
- "org.uqbar.project.wollok.game" 
+ "org.uqbar.project.wollok.game"
 )
 
 echo "Removing wollok jars"
@@ -72,6 +73,9 @@ do
   echo "Copying $i*.jar" 
   find $SRC -name "$i*.jar" | xargs cp -t $JARS_FOLDER
 done
+
+echo "Copying game lib jars"
+cp $LIB_GAME/*.jar $JARS_FOLDER
 
 # Step 2 => from lib folder
 for i in `find $LIB -type f -name "*.jar"`
