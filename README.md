@@ -28,8 +28,9 @@ The root folder provides all Wollok bash commands:
 
 - **wollok test & wollok run**: runs all the test/programs from the current folder (see below)
 - **repl**: invoke Wollok interactive REPL console, using an optional .wlk file
+- **format**: run Wollok formatter for recommended indentation and space code style
 - **check**: builds and validates any wollok file
-- **ast**: outputs the current Abstract Syntax Tree, according to Wollok grammatical rules.
+- **ast**: outputs the current Abstract Syntax Tree, according to Wollok grammatical rules
 - you'll also find Wollok server scripts.
 
 Here's an example of running
@@ -39,7 +40,7 @@ Here's an example of running
 
 ![](images/wollokCLIDemo1.gif)
 
-And a second demo
+A second demo shows
 
 - running interactive console without any file,
 - running interactive console using **pepita**, our main character for the very first example in Wollok,
@@ -47,6 +48,10 @@ And a second demo
 - and AST analyzer for **pepita.wlk** and saving output into a file
 
 ![](images/wollokCLIDemo2.gif)
+
+And finally you can see formatter in action:
+
+![](images/wollokFormat.gif)
 
 ### `jars` folder
 
