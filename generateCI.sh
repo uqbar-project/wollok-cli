@@ -58,7 +58,12 @@ JARS=(
  "org.uqbar.project.wollok-"
  "org.uqbar.project.wollok.lib"
  "org.uqbar.project.wollok.launch"
+ "org.uqbar.project.wollok.game" 
 )
+
+echo "Removing wollok jars"
+rm $JARS_FOLDER/*wollok*
+rm $JARS_FOLDER/*xinterpreter*
 
 # Copying all .jars into wollok-cli jars folder
 # Step 1 => from target folder
