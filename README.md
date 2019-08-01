@@ -30,7 +30,7 @@ The root folder provides all Wollok bash commands:
 - **repl**: invoke Wollok interactive REPL console, using an optional .wlk file
 - **format**: run Wollok formatter for recommended indentation and space code style
 - **check**: builds and validates any wollok file
-- **ast**: outputs the current Abstract Syntax Tree, according to Wollok grammatical rules.
+- **ast**: outputs the current Abstract Syntax Tree, according to Wollok grammatical rules
 - you'll also find Wollok server scripts.
 
 Here's an example of running
