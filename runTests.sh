@@ -9,7 +9,7 @@ CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $CLI_DIR/includes/commons.sh
 source $CLI_DIR/includes/colors.sh
 
-echo "Compilando archivos Wollok..."
+echo "Validando archivos Wollok..."
 interpret "*.wlk" $CLI_DIR
 if [ $? -ne 0 ] ; then
     exit 1
