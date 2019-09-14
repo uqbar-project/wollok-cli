@@ -36,6 +36,10 @@ case $COMMAND in
     echo "format aves.wlk  => aplica el formateador al archivo aves.wlk (-save actualiza el archivo)"
     echo "check archivo    => compila y valida un archivo con extensión Wollok válida"
     echo "ast archivo      => devuelve un JSON el AST del archivo según la gramática de Wollok"
+    echo 
+    echo "Para probar cambios en el ambiente local de desarrollo de Wollok XText," \
+      "se debe definir la variable WOLLOK_DEV_ROOT apuntando al repositorio principal de wollok-xtext." \
+      "Por ejemplo: WOLLOK_DEV_ROOT=../xtext wollok test."
     exit 1
     ;;
 esac
