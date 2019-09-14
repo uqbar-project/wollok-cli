@@ -40,6 +40,10 @@ case $COMMAND in
     echo "Para probar cambios en el ambiente local de desarrollo de Wollok XText," \
       "se debe definir la variable WOLLOK_DEV_ROOT apuntando al repositorio principal de wollok-xtext." \
       "Por ejemplo: WOLLOK_DEV_ROOT=../xtext wollok test."
+    echo
+    echo "Opciones: "
+    echo "  -dontValidate: Evita que se ejecuten las validaciones de wollok. "
+    echo "                 (Necesario al correr los sanity tests porque algunos incluyen programas intencionalmente erróneos.)"
     exit 1
     ;;
 esac
