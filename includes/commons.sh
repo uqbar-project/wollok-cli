@@ -11,3 +11,13 @@ function interpret() {
     files=`find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
     $CLI_FOLDER/winterpreter.sh -severalFiles $files "${@:3}"
 }
+
+# 
+# This should be the next version => once we fix launcher with several files
+# 
+# function interpret() {
+#     STATUS=0
+#     CLI_FOLDER=$2
+#     files=`find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
+#     $CLI_FOLDER/winterpreter.sh -severalFiles $files "${@:3}"
+# }
