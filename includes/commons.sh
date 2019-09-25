@@ -5,26 +5,28 @@
 #    arg 1:  a Wollok file (.wtest, .wlk, .wpgm)
 #    arg 2:  passing wollok-cli root folder
 #    ...arg: any other args
-function interpret() {
-    STATUS=0
-    CLI_FOLDER=$2
-    for file in `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
-        do
-            echo "   -->  $file"
-            $CLI_FOLDER/winterpreter.sh $file exitOnBuildFailure "${@:3}"
-            if [ $? -ne 0 ] ; then
-                STATUS=1
-            fi
-        done
-    return $STATUS
-}
+# function interpret() {
+#     STATUS=0
+#     CLI_FOLDER=$2
+#     for file in `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
+#         do
+#             echo "   -->  $file"
+#             $CLI_FOLDER/winterpreter.sh $file exitOnBuildFailure "${@:3}"
+#             if [ $? -ne 0 ] ; then
+#                 STATUS=1
+#             fi
+#         done
+#     return $STATUS
+# }
 
 # 
 # This should be the next version => once we fix launcher with several files
 # 
-# function interpret() {
-#     STATUS=0
-#     CLI_FOLDER=$2
-#     files=`find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
-#     $CLI_FOLDER/winterpreter.sh -severalFiles $files "${@:3}"
-# }
+function interpret() {
+    STATUS=0
+    CLI_FOLDER=$2
+    files=`find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
+    echo "Procesando" 
+    echo "$files"
+    $CLI_FOLDER/winterpreter.sh -severalFiles $files "${@:3}"
+}
