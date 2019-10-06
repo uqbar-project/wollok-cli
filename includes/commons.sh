@@ -1,30 +1,17 @@
 #
 # Common functions
 #
-# Interprets
-#    arg 1:  a Wollok file (.wtest, .wlk, .wpgm)
-#    arg 2:  passing wollok-cli root folder
-#    ...arg: any other args
+# 
+# This should be the next version => once we fix launcher with several files
+#    arg 1:     a Wollok folder which contains all test files (.wtest)
+#    arg 2:     passing wollok-cli root folder
+#    args 3..n: any other interpreter argument
+# 
 function interpret() {
     STATUS=0
     CLI_FOLDER=$2
-    for file in `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
-        do
-            echo "   -->  $file"
-            $CLI_FOLDER/winterpreter.sh $file exitOnBuildFailure "${@:3}"
-            if [ $? -ne 0 ] ; then
-                STATUS=1
-            fi
-        done
-    return $STATUS
+    files=`find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
+    echo "Procesando" 
+    echo "$files"
+    $CLI_FOLDER/winterpreter.sh -severalFiles $files "${@:3}"
 }
-
-# 
-# This should be the next version => once we fix launcher with several files
-# 
-# function interpret() {
-#     STATUS=0
-#     CLI_FOLDER=$2
-#     files=`find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
-#     $CLI_FOLDER/winterpreter.sh -severalFiles $files "${@:3}"
-# }
