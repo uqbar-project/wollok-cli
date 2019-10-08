@@ -38,7 +38,7 @@ Here's an example of running
 - all tests from a project,
 - all programs from a project,
 
-![](images/wollokCLIDemo1.gif)
+![Demo Test & Run](images/demo.gif)
 
 A second demo shows
 
@@ -47,11 +47,11 @@ A second demo shows
 - checker for **pepita.wlk**  (since no output was given all tests passed succesfully),
 - and AST analyzer for **pepita.wlk** and saving output into a file
 
-![](images/wollokCLIDemo2.gif)
+![Demo REPL](images/wollokCLIDemo2.gif)
 
 And finally you can see formatter in action:
 
-![](images/wollokFormat.gif)
+![Demo Formatter](images/demoFormatter.gif)
 
 ### `jars` folder
 
@@ -64,7 +64,7 @@ In `jars` folder we put all necessary Java jar files in order to run in a standa
 
 are suitable for using it in Travis scripts. They both start **building all .wlk files**, so even if your tests are passing or your program is working fine, ensure you have no errors in `Problems` tab (in your Wollok IDE).
 
-![image](images/wollokProblems.png)
+![Wollok Problems](images/wollokProblems.png)
 
 Otherwise, your build will fail.
 
@@ -72,7 +72,7 @@ It then will run either all the tests files or all the programs. Any kind of err
 
 An example of Travis output:
 
-![image](images/travisBuild.png)
+![Travis Build](images/travisBuild2.png)
 
 ### Example 1: running tests in a Wollok Project
 
@@ -135,7 +135,7 @@ Whenever Wollok has a new stable release, you can update all jars from `jars` fo
 
 For example, if you have this folder structure:
 
-```
+```bash
   |- wollok-cli
      |- generateCI script bash file
   |   ...
