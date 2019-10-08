@@ -16,7 +16,7 @@ if [ $? -ne 0 ] ; then
 fi
 echo "==========================================================="
 echo "Ejecutando programas..."
-interpret "*.wpgm" $CLI_DIR
+interpretSingle "*.wpgm" $CLI_DIR
 if [ $? -ne 0 ] ; then
     echo
     echo "$RED$BOLD""ERROR en el programa ejecutado. $RESET$RED""Revise el log para más información.$RESET"
