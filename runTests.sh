@@ -6,10 +6,15 @@
 
 # Setting relative folder to this script file
 
-
 CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $CLI_DIR/includes/commons.sh
 source $CLI_DIR/includes/colors.sh
+
+find . -name "*.wtest" | egrep '.*'
+if [ $? -ne 0 ]; then
+    echo "$RED$BOLD""ERROR: no se encontraron archivos con extensión *.wtest.$RESET"
+    exit 1
+fi
 
 echo "Validando archivos Wollok..."
 interpret "*.wlk" $CLI_DIR $@
