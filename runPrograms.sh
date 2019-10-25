@@ -9,7 +9,7 @@ CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $CLI_DIR/includes/commons.sh
 source $CLI_DIR/includes/colors.sh
 
-find . -name "*.wpgm" | egrep '.*'
+find . -name "*.wpgm" | egrep '.*' -q
 if [ $? -ne 0 ]; then
     echo "$RED$BOLD""ERROR: no se encontraron archivos con extensión *.wpgm.$RESET"
     exit 1

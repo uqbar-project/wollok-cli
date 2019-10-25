@@ -12,7 +12,6 @@ function interpret() {
     CLI_FOLDER=$2
     files=`find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
     echo "Procesando" 
-    echo "$files"
     $CLI_FOLDER/winterpreter.sh -severalFiles $files "${@:3}"
 }
 
@@ -26,7 +25,6 @@ function interpretSingle() {
     CLI_FOLDER=$2
     for file in `find -name $1 ! -path "*/.history*" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" ! -path "*/includes/emptyFile.wlk"`
         do
-            echo "   ==>  $file"
             $CLI_FOLDER/winterpreter.sh $file exitOnBuildFailure "${@:3}"
             if [ $? -ne 0 ] ; then
                 STATUS=1
