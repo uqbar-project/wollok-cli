@@ -16,12 +16,17 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "Validando archivos Wollok..."
-interpret "*.wlk" $CLI_DIR $@
-if [ $? -ne 0 ] ; then
-    exit 1
+find . -name "*.wlk" | egrep '.*' -q
+
+if [ $? -eq 0 ]; then
+    echo "Validando archivos Wollok..."
+    echo "==========================================================="
+    interpret "*.wlk" $CLI_DIR $@
+    if [ $? -ne 0 ] ; then
+        exit 1
+    fi
 fi
-echo "==========================================================="
+
 echo "Ejecutando tests..."
 interpret "*.wtest" $CLI_DIR -t $@
 if [ $? -ne 0 ] ; then
