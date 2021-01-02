@@ -16,13 +16,14 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Compilando archivos Wollok..."
-interpret "*.wlk" $CLI_DIR
+
+interpret "*.wlk" $CLI_DIR "$@"
 if [ $? -ne 0 ] ; then
     exit 1
 fi
 echo "==========================================================="
 echo "Ejecutando programas..."
-interpretSingle "*.wpgm" $CLI_DIR
+interpretSingle "*.wpgm" $CLI_DIR "$@"
 if [ $? -ne 0 ] ; then
     echo
     echo "$RED$BOLD""ERROR en el programa ejecutado. $RESET$RED""Revise el log para más información.$RESET"
