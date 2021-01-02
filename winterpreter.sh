@@ -15,4 +15,8 @@ else
     CLASSPATH="$WOLLOK_DEPENDENCIES:$OTHER_DEPENDENCIES"
 fi
 
-java -cp "$CLASSPATH" org.uqbar.project.wollok.launch.WollokLauncher $@
+LOG4J_CONFIG=$(find  -name log4j.properties -print -quit)
+if [ ! -z  "$LOG4J_CONFIG" ] ; then
+  LOG4J_CONFIG="-Dlog4j.configuration='file:${LOG4J_CONFIG}'"
+fi
+eval java -cp "$CLASSPATH" "$LOG4J_CONFIG" org.uqbar.project.wollok.launch.WollokLauncher $@
