@@ -9,7 +9,7 @@ function addTravisFile() {
     #     return
     # fi
 
-    find . -name "*.wtest" -type f | egrep '.*'
+    find . -name "*.wtest" -type f | grep -E '.*'
     if [ $? -eq 0 ]; then
         echo "   Creating Travis file for tests"
         cp ./travisTests.yml ./$1/.travis.yml
@@ -22,7 +22,7 @@ function addTravisFile() {
 function addBadgeInReadme() {
     README_file="./$1/README.md"
     TRAVIS_BADGE="[![Build_Status](https://travis-ci.org/wollok/$1.svg?branch=master)](https://travis-ci.org/wollok/$1)"
-    
+
     if [ -s $README_file ]; then
         grep travis-ci $README_file -q
         if [ $? -eq 0 ]; then
@@ -45,5 +45,5 @@ function addBadgeInReadme() {
 for i in `find . -mindepth 1 -maxdepth 1 -type d -not -path "./.history*" | sed "s/\.\///g"`
     do
         addTravisFile $i
-        # addBadgeInReadme $i 
+        # addBadgeInReadme $i
     done

@@ -10,13 +10,13 @@ CLI_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source $CLI_DIR/includes/commons.sh
 source $CLI_DIR/includes/colors.sh
 
-find . -name "*.wtest" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" | egrep '.*' -q
+find . -name "*.wtest" ! -path "*/bin/**" ! -path "*/wsanity-check-examples/*" | grep -E '.*' -q
 if [ $? -ne 0 ]; then
     echo "$RED$BOLD""ERROR: no se encontraron archivos con extensión *.wtest.$RESET"
     exit 1
 fi
 
-find . -name "*.wlk" | egrep '.*'
+find . -name "*.wlk" | grep -E '.*'
 
 if [ $? -eq 0 ]; then
     echo "Validando archivos Wollok..."
